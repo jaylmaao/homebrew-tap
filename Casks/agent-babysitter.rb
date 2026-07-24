@@ -2,8 +2,8 @@
 # jaylmaao/homebrew-tap repo; this is the source of truth, stamped by
 # Scripts/update-cask.sh at release time (version + sha256).
 cask "agent-babysitter" do
-  version "0.11.3"
-  sha256 "f4923904735c113246abf70af7b39942e7ecf8e3fb7ecce20cbee92618ca7432"
+  version "0.12.0"
+  sha256 "462dd4f625bbe01b8453e6a1edd5487333370bbc908f89d2f55bb20850eb0b1c"
 
   url "https://github.com/jaylmaao/agent-babysitter/releases/download/v#{version}/AgentBabysitter-#{version}.dmg"
   name "Agent Babysitter"
@@ -17,11 +17,19 @@ cask "agent-babysitter" do
 
   app "AgentBabysitter.app"
 
+  # This caveat exists ONLY because the DMG is not yet signed and notarized.
+  # Do not reintroduce `--no-quarantine` guidance here: stripping quarantine
+  # is the instruction malware distributors give, it disqualifies the cask
+  # from homebrew-cask proper, and it removes the attribute macOS needs to
+  # revoke a compromised binary later. The real fix is a Developer ID
+  # signature + notarization ticket (see Scripts/make-dmg.sh). Once the DMG
+  # is signed and notarized, delete this whole caveats block — Gatekeeper
+  # verifies the stapled ticket and the first-launch prompt disappears.
   caveats <<~EOS
-    Agent Babysitter is an unsigned beta. To skip the one-time Gatekeeper
-    prompt, install with:
-      brew install --cask --no-quarantine jaylmaao/tap/agent-babysitter
-    Otherwise, allow it once under System Settings > Privacy & Security.
+    Agent Babysitter is an unsigned beta, so macOS Gatekeeper blocks the
+    first launch. To open it: launch it once and dismiss the warning, then
+    open System Settings > Privacy & Security, scroll down, and click
+    "Open Anyway" next to Agent Babysitter. You only have to do this once.
   EOS
 
   zap trash: [

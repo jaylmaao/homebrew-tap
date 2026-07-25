@@ -5,7 +5,7 @@ cask "agent-babysitter" do
   version "0.12.0"
   sha256 "c611c604cd885dfb44db7cc5fa652f3fe791aec0aeebf8287fa4fbc0ff0a7e19"
 
-  url "https://github.com/jaylmaao/agent-babysitter/releases/download/v#{version}/AgentBabysitter-#{version}.dmg"
+  url "https://github.com/jaylmaao/agent-babysitter-releases/releases/download/v#{version}/AgentBabysitter-#{version}.dmg"
   name "Agent Babysitter"
   desc "Menu bar monitor for AI coding agents (Claude Code, Codex, Cursor, Manus, and more)"
   homepage "https://github.com/jaylmaao/agent-babysitter"

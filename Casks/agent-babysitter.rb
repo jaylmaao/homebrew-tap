@@ -3,7 +3,7 @@
 # Scripts/update-cask.sh at release time (version + sha256).
 cask "agent-babysitter" do
   version "0.12.0"
-  sha256 "46b7e7d90c671dc2231ec3aefb79c09b4ef65f9d314675c09273326f7b5818fe"
+  sha256 "c611c604cd885dfb44db7cc5fa652f3fe791aec0aeebf8287fa4fbc0ff0a7e19"
 
   url "https://github.com/jaylmaao/agent-babysitter/releases/download/v#{version}/AgentBabysitter-#{version}.dmg"
   name "Agent Babysitter"

@@ -8,7 +8,7 @@ cask "agent-babysitter" do
   url "https://github.com/jaylmaao/agent-babysitter-releases/releases/download/v#{version}/AgentBabysitter-#{version}.dmg"
   name "Agent Babysitter"
   desc "Menu bar monitor for AI coding agents (Claude Code, Codex, Cursor, Manus, and more)"
-  homepage "https://github.com/jaylmaao/agent-babysitter"
+  homepage "https://github.com/jaylmaao/agent-babysitter-releases"
 
   livecheck do
     url :url
